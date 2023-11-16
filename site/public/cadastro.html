@@ -31,7 +31,7 @@
 <main>
     <div class="container" id="container">
         <div class="segundo-container registrar">
-            <form>
+            <div class="form">
                 <h1>Criar Conta</h1>
                 <!-- <div class="icones">
                     <a href="#" class="icon"><i class="fa-brands fa-facebook-f" style="color: white;"></i></a>
@@ -43,7 +43,7 @@
                 <input type="password" placeholder="Senha" id="senha_input">
                 <input type="password" placeholder="Confirmar senha" id="confirmacao_senha_input">
                 <button onclick="cadastrar()">Registrar</button>
-            </form>
+              </div>
         </div>
         <div class="segundo-container entrar">
             <form>
@@ -55,7 +55,7 @@
                 <span>Insira a senha do e-mail</span>
                 <input type="email" placeholder="E-mail">
                 <input type="password" placeholder="Senha">
-                <button onclick="entrar()">Entrar</button>
+                <button>Entrar</button>
             </form>
         </div>
         <div class="container-muda">
@@ -68,7 +68,7 @@
                 <div class="muda-painel muda-direita">
                     <h1>Salve, Skate!</h1>
                     <p>Coloque seus dados para encaixar a trick.</p>
-                    <button class="ocultar" id="registrar">Entrar</button>
+                    <button class="ocultar" id="registrar"><a href="login.html">Entrar</a></button>
                 </div>
             </div>
         </div>
@@ -194,16 +194,16 @@
 
 
 
-const container = document.getElementById('container');
-const registrar = document.getElementById('registrar');
-const logar = document.getElementById('logar');
+// const container = document.getElementById('container');
+// const registrar = document.getElementById('registrar');
+// const logar = document.getElementById('logar');
 
-registrar.addEventListener('click', () => {
-    container.classList.add("active");
-});
+// registrar.addEventListener('click', () => {
+//     container.classList.add("active");
+// });
 
-logar.addEventListener('click', () => {
-    container.classList.remove("active");
-});
+// logar.addEventListener('click', () => {
+//     container.classList.remove("active");
+// });
 
 </script>

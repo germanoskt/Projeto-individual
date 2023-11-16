@@ -109,7 +109,7 @@ main{
     border-color: #fff;
 }
 
-.container form{
+.container .form{
     color: white;
     background-color: #000000;
     display: flex;

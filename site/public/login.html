@@ -29,7 +29,7 @@
 </body>
 <main>
     <div class="container" id="container">
-        <div class="segundo-container entrar">
+        <!-- <div class="segundo-container entrar">
             <form>
                 <h1>Criar Conta</h1>
                 <div class="icones">
@@ -43,9 +43,9 @@
                 <input type="password" placeholder="Confirmar senha">
                 <button>Registrar</button>
             </form>
-        </div>
+        </div> -->
         <div class="segundo-container registrar">
-            <form>
+            <div class="form">
                 <h1>Entrar</h1>
                 <!-- <div class="icones">
                     <a href="#" class="icon"><i class="fa-brands fa-facebook-f" style="color: white;"></i></a>
@@ -55,7 +55,7 @@
                 <input type="email" placeholder="E-mail" id="email_input">
                 <input type="password" placeholder="Senha" id="senha_input">
                 <button onclick="entrar()">Entrar</button>
-            </form>
+            </div>
         </div>
         <div class="container-muda">
             <div class="muda">
@@ -67,7 +67,7 @@
                 <div class="muda-painel muda-direita">
                     <h1>Vamos manobrar pelo site, G?</h1>
                     <p>Coloque seus dados para poder manobrar pelo site.</p>
-                    <button class="ocultar" id="registrar">Registrar</button>
+                    <button class="ocultar" id="registrar"><a href="cadastro.html">Registrar</a></button>
                 </div>
             </div>
         </div>
@@ -121,7 +121,7 @@
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/usuarios/autenticar", {
+        fetch("http://localhost:3333/usuarios/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -136,16 +136,16 @@
             if (resposta.ok) {
                 console.log(resposta);
 
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                resposta.json().then(response => {
+                    console.log(response);
+                    console.log(JSON.stringify(response));
+                    sessionStorage.EMAIL_USUARIO = response.email;
+                    sessionStorage.NOME_USUARIO = response.nome;
+                    sessionStorage.ID_USUARIO = response.id;
                     // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
-                        window.location = './index.html';
+                        window.location = './dashboard/cards.html';
                     }, 1000); // apenas para exibir o loading
 
                 });
@@ -172,15 +172,15 @@
     }
 
 
-const container = document.getElementById('container');
-const registrar = document.getElementById('registrar');
-const logar = document.getElementById('logar');
+// const container = document.getElementById('container');
+// const registrar = document.getElementById('registrar');
+// const logar = document.getElementById('logar');
 
-registrar.addEventListener('click', () => {
-    container.classList.add("active");
-});
+// registrar.addEventListener('click', () => {
+//     container.classList.add("active");
+// });
 
-logar.addEventListener('click', () => {
-    container.classList.remove("active");
-});
+// logar.addEventListener('click', () => {
+//     container.classList.remove("active");
+// });
 </script>
