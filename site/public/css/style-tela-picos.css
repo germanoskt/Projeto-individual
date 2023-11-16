@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: rgb(0, 0, 0);
+    
+    /* background: url('https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2021/3/12/f7z7etqxmfgnkhziemfl/skate-memorial-vale-do-anhangabau')no-repeat scroll;
+    background-size: 100%;
+    position: relative; */
+}
+
+.logo a{
+    color: white;
+    text-decoration: none;
+    font-size: 45px;
+}
+.header {
+    background-color: #0000003b;
+    width: 100%;
+    height: 30px;
+    color: #ffffff;
+    opacity: 0%;
+    transition: 0.5s;
+}
+.header:hover{
+    width: 100%;
+    height: 100px;
+    opacity: 100%;
+}
+.header .container-h {
+    width: 80%;
+    height: 100%;
+    margin: 0 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header .container-h li{
+    display: inline;
+    list-style: none;
+    padding: 0 15px;
+}
+.header .container-h .navbare li a{
+    text-decoration: none;
+    color: white;
+}
+.lista-esquerda:hover{
+    color: rgba(240, 248, 255, 0.466);
+    font-weight: 700;
+    font-size: 17.5px;
+    transition: 1.5s;
+}
+
+.navbard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bag-nav{
+    margin-right: 80px;
+    cursor: pointer;
+}
+.navbard .botaoEntrar{
+    border: 1px solid rgba(58, 58, 58, 0.507);
+    border-radius: 35px;
+    padding: 10px;
+}
+.navbard .botaoEntrar:hover{
+    background-color: white;
+    transition: 2s;
+    backdrop-filter: blur(70px);
+}
+.navbard .botaoEntrar a:hover{
+    color: black;
+    font-size: 17px;
+    font-weight: 700;
+    transition: 0.8s;
+}
+.navbard .botaoEntrar a{
+    text-decoration: none;
+    color: white;
+}
+.navbard .botaoCadastrar{
+    border-radius: 20px;
+    margin: 0 0 0 20px;
+}
+.navbard .botaoCadastrar a{
+    text-decoration: none;
+    color: white;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    background: url('https://global-uploads.webflow.com/63d3c43a87589374d0a09844/645a982570079dfb5c1f8b51_Secom%20Skate%20Vale%20do%20Anhangaba%C3%BA.jpeg');
+    background-size: cover;
+    /* border: 1px solid white; */
+}
+.mensagem{
+    /* border: 1px solid white; */
+    margin: 30px 0 0 0;
+    width: 320px;
+    height: 65px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.966);
+    border-radius: 10px;
+    letter-spacing: 2px;
+    /* text-shadow: 2px 9px 8px rgba(0,0,0,0.91); */
+}
+.mensagem h2{
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    font-size: 25px;
+}
+.container-main{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1600px;
+    flex-wrap: wrap;
+    z-index: 1;
+    /* border: 1px solid white; */
+}
+.container-main span{
+    display: block;
+    justify-content: flex-start;
+}
+.container-main .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 60px;
+    box-shadow: 20px 20px 50px black;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.7px solid rgb(116, 116, 116);
+    border-left: 0.7px solid rgb(116, 116, 116);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.541);
+}
+.container-main .card .content{
+    padding: 20px;
+    text-align: center;
+    /* transform: translateY(100px); */
+    /* opacity: 0%; */
+    /* transition: 0.5s; */
+}
+.container-main .card:hover .content{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.container-main .card .content h2{
+    /* font-size: 7em; */
+    color: rgba(255, 255, 255, 0.932);
+}
+.container-main .card .content h3{
+    font-size: 1.8em;
+    color: white;
+    z-index: 1;
+}
+.container-main .card .content b{
+    color: rgb(255, 230, 0);
+    font-size: 19px;
+}
+.container-main .card .content p{
+    font-size: 1em;
+    color: white;
+    font-weight: 300;
+    margin: 15px 0;
+}
+.container-main .card .content a{
+    width: fit-content;
+    height: fit-content;
+
+}
+.container-main .card .content .dificuldade{
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-main .card .content .dificuldade a{
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 600;
+}
+.container-main .card .content .dificuldade .button{
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 35px;
+}
+.container-main .card .content .dificuldade .facil{
+    background-color: green;
+}
+.container-main .card .content .dificuldade .medio{
+    background-color: rgb(255, 94, 0);
+}
+.container-main .card .content .dificuldade .dificil{
+    background-color: red;
+}
+.container-main .card .content .square{
+    width: 100%;
+    height: 150px;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0;
+}
+.container-main .card .content .square-img{
+    width: 200px;
+    height: 100%;
+    /* border: 1px solid white; */
+}
+.container-main .card .content .imagem{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* opacity: 80%; */
+}
+.footer{
+    width: 100%;
+    position: relative;
+    height: 290px;
+    background: rgb(4,3,3);
+    background: linear-gradient(196deg, rgba(4,3,3,1) 0%, rgb(8, 8, 8) 90%, rgba(0,0,0,1) 100%);
+    /* border-radius: 70px 0 0 0; */
+}
+.conteudo{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    text-decoration: none;
+}
+.conteudo p{
+    margin: 0 0 50px 0;
+}
+.conteudo h1{
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.conteudo h1, .conteudo h2{
+    margin: 30px 0 10px 0;
+
+}
+
+.checkbox-s{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 70%;
+}
+.button-enviar button{
+    border:none;
+    padding: 20px;
+    margin: 60px 0;
+    border-radius: 8px;
+    background-color: black;
+    font-size: 17px;
+    color: white;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.button-enviar button:hover{
+    /* border-left: 2px solid rgb(255, 1, 1);
+    border-bottom: 2px solid rgb(255, 0, 0); */
+    padding: 21px;
+    box-shadow: 3px 12px 63px 8px rgba(0,0,0,0.78);
+    -webkit-box-shadow: 3px 12px 63px 8px rgba(0,0,0,0.78);
+    -moz-box-shadow: 3px 12px 63px 8px rgba(0,0,0,0.78);
+    transition: 1s;
+}
+#armazenar{
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

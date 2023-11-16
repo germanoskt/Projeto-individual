@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./css/style-tela-dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+    
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="back">
+                <div class="voltar"><a href="./Tela-perfil.html">Voltar</a></div>
+            </div>
+            <div class="navbare">
+                <ul>
+                    <li class="lista-esquerda"><a href="./Tela-dashboard.html">Métricas</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<div class="main">
+    <div class="conteudo">
+        <h1>Abaixo estão seus pontos convertidos para um gráfico:</h1>
+    </div>
+    <div class="cobertura">
+        <div  class="dash">
+        <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div>
+</html>
+<script>
+    const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: [],
+    datasets: [{
+      label: 'Pontuação',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+</script>
