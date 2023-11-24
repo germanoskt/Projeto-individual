@@ -31,13 +31,14 @@ body{
     /* align-items: center; */
 }
 .retangulo-esquerdo{
-    width: 400px;
+    width: 350px;
     height: 100%;
     /* border: 1px solid rgb(255, 0, 0); */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-left: 30px;
 }
 .retangulo-esquerdo span{
     margin-bottom: 10px;
@@ -53,13 +54,14 @@ body{
     height: 100%;
 }
 .conteudo-meio{
-    width: 1200px;
+    width: 740px;
     height: 100%;
     /* border: 1px solid rgb(0, 162, 255); */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    margin-right: 100px;
 }
 .retangulo-direito{
     width: 400px;
@@ -91,8 +93,8 @@ body{
     transition: 0.4s;
 }
 .quadrado{
-    width: 950px;
-    height: 650px;
+    width: 650px;
+    height: 430px;
     background-color: rgba(255, 255, 255, 0.281);
     border-radius: 10px;
     color: black;
@@ -103,13 +105,13 @@ body{
 
 .cobre-q{
     width: 100%;
-    height: 900px;
+    height: 770px;
     display: flex;
     justify-content: center;
     background-color: aliceblue;
-    /* border-radius: 5px; */
+    border-radius: 3px;
     padding: 10px;
-    margin: 30px 0 0 80px;
+    margin: 60px 0 0 90px;
 }
 .cobre-q:hover{
     opacity: 70%;
@@ -123,6 +125,9 @@ body{
     color: black;
     display: flex;
     justify-content: center;
+}
+.titulo-quadrados{
+    margin: 100px 0 150px 0;
 }
 .cobre-q span{
     font-size: 18px;
@@ -214,7 +219,7 @@ body{
 .navbard .botaoEntrar a:hover{
     color: black;
     font-size: 17px;
-    font-weight: 700;
+    font-weight: 500;
     transition: 0.8s;
 }
 .navbard .botaoEntrar a{

@@ -4,41 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
-    <link rel="stylesheet" href="./style-tela-dashboard.css">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/style-tela-dashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
+    
 <body>
     <div class="header">
         <div class="container">
+            <div class="back">
+                <div class="voltar"><a href="./cards.html">Voltar</a></div>
+            </div>
             <div class="navbare">
                 <ul>
-                    <li class="lista-esquerda"><a href="">Voltar</a></li>
-                    <li class="lista-esquerda"><a href="">Pontuação</a></li>
-                    <li class="lista-esquerda"><a href="../Tela Picos/Tela picos.html">Métricas</a></li>
+                    <li class="lista-esquerda"><a href="">Métricas</a></li>
                 </ul>
-            </div>
-            <div class="navbard">
-                <div class="botaoEntrar">
-                    <div class="entrar"><a href="../Tela login/login.html">Entrar</a></div>
-                </div>
-                <div class="botaoCadastrar">
-                    <div class="cadastrar"><a href="../Tela login/login.html">Cadastrar</a></div>
-                </div>
             </div>
         </div>
     </div>
 </body>
-<main>
-    <h1>Olá,</h1>
-    
-</main>
+<div class="main">
+    <div class="conteudo">
+        <h1>Abaixo estão seus pontos convertidos para um gráfico:</h1>
+    </div>
+    <div class="cobertura">
+        <div  class="dash">
+        <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div>
 </html>
+<script>
+const ctx = document.getElementById('myChart');
 
+new Chart(ctx, {
+  type: 'line',
+  
+  data: {
+    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7'],
+    datasets: [{
+      label: 'Pontuação',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+</script>
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
@@ -73,12 +95,6 @@
         if (aquarios.length > 0) {
             exibirAquario(aquarios[0].id)
         }
-    }
-
-    function alterarTitulo(idAquario) {
-        var tituloAquario = document.getElementById(`tituloAquario${idAquario}`)
-        var descricao = JSON.parse(sessionStorage.AQUARIOS).find(item => item.id == idAquario).descricao;
-        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>" + descricao + "</span>"
     }
 
     function exibirAquario(idAquario) {
@@ -275,10 +291,9 @@
             });
 
     }
+
+
 </script>
-<div class="hello">
-    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-</div>
 
 <script src="../js/sessao.js"></script>
 <script src="./../js/alerta.js"></script>

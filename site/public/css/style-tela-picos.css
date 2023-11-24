@@ -100,29 +100,31 @@ main{
     align-items: center;
     flex-direction: column;
     min-height: 100%;
-    background: url('https://global-uploads.webflow.com/63d3c43a87589374d0a09844/645a982570079dfb5c1f8b51_Secom%20Skate%20Vale%20do%20Anhangaba%C3%BA.jpeg');
+    /* background: url('https://global-uploads.webflow.com/63d3c43a87589374d0a09844/645a982570079dfb5c1f8b51_Secom%20Skate%20Vale%20do%20Anhangaba%C3%BA.jpeg'); */
+    background-color: rgb(39, 36, 36);
     background-size: cover;
     /* border: 1px solid white; */
 }
 .mensagem{
     /* border: 1px solid white; */
     margin: 30px 0 0 0;
-    width: 320px;
+    width: 390px;
     height: 65px;
     background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.966);
+    /* background-color: rgba(0, 0, 0, 0.966); */
     border-radius: 10px;
     letter-spacing: 2px;
     /* text-shadow: 2px 9px 8px rgba(0,0,0,0.91); */
+    margin: 70px 0;
 }
 .mensagem h2{
     color: white;
     width: fit-content;
     height: fit-content;
-    font-size: 25px;
+    font-size: 35px;
 }
 .container-main{
     position: relative;
@@ -143,7 +145,7 @@ main{
     width: 300px;
     height: 400px;
     margin: 60px;
-    box-shadow: 20px 20px 50px black;
+    box-shadow: 15px 15px 50px rgb(0, 0, 0);
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -152,7 +154,7 @@ main{
     border-top: 0.7px solid rgb(116, 116, 116);
     border-left: 0.7px solid rgb(116, 116, 116);
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.884);
+    background-color: rgba(255, 255, 255, 0.884);
 }
 .container-main .card .content{
     padding: 20px;
@@ -167,20 +169,20 @@ main{
 }
 .container-main .card .content h2{
     /* font-size: 7em; */
-    color: rgba(255, 255, 255, 0.932);
+    color: rgba(0, 0, 0, 0.932);
 }
 .container-main .card .content h3{
     font-size: 1.8em;
-    color: white;
+    color: rgb(0, 0, 0);
     z-index: 1;
 }
 .container-main .card .content b{
-    color: rgb(255, 230, 0);
+    color: rgb(213, 206, 7);
     font-size: 19px;
 }
 .container-main .card .content p{
     font-size: 1em;
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: 300;
     margin: 15px 0;
 }
@@ -270,27 +272,25 @@ main{
 }
 .button-enviar button{
     border:none;
-    padding: 20px;
-    margin: 60px 0;
+    padding: 25px;
+    margin: 90px 0;
     border-radius: 8px;
-    background-color: black;
-    font-size: 17px;
+    border: 1px solid white;
+    background-color: transparent;
+    font-size: 19px;
     color: white;
-    font-weight: 600;
+    font-weight: 500;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
 }
-
 .button-enviar button:hover{
-    /* border-left: 2px solid rgb(255, 1, 1);
-    border-bottom: 2px solid rgb(255, 0, 0); */
-    padding: 24px 23px;
-    transition: 1s;
-    /* box-shadow: 3px 12px 63px 8px rgba(0,0,0,0.78);
-    -webkit-box-shadow: 3px 12px 63px 8px rgba(0,0,0,0.78);
-    -moz-box-shadow: 3px 12px 63px 8px rgba(0,0,0,0.78);
-    transition: 1s; */
+    padding: 24px;
+    font-size: 18px;
+    border: 1px dashed rgba(255, 255, 255, 0.738);
+    transition: 0.5s;
 }
+
+
 #armazenar{
     width: 100px;
     height: 100px;

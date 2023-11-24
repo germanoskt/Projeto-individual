@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ranking</title>
+    <link rel="stylesheet" href="./css/style-tela-ranking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+
+    <script src="./js/sessao.js"></script>
+</head>
+
+<body onload="validarSessao(), rankPonto()">
+    <div class="header">
+        <div class="container">
+            <div class="back">
+                <div class="voltar"><a href="./dashboard/cards.html">Voltar</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+<main>
+    <div class="table">
+        <section class="table__header">
+            <h1>Ranking</h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr class="titulo">
+                        <th> Posição <span class="icon-arrow"></span></th>
+                        <th> Usuário <span class="icon-arrow"></span></th>
+                        <th> Pontuação <span class="icon-arrow"></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 1 </td>
+                        <td id="b_usuario"></td>
+                        <td class="pontos"></td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td id="b_usuario"></td>
+                        <td class="pontos"></td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td class="nome"></td>
+                        <td class="pontos"></td>
+                    </tr>
+                    <tr>
+                        <td> 4</td>
+                        <td class="nome"></td>
+                        <td class="pontos"></td>
+                    </tr>
+                    <tr>
+                        <td> 5</td>
+                        <td class="nome"></td>
+                        <td class="pontos"></td>
+                    </tr>
+                    <tr>
+                        <td> 6</td>
+                        <td class="nome"></td>
+                        <td class="pontos"></td>
+                    </tr>
+                    <tr>
+                        <td> 7</td>
+                        <td class="nome"></td>
+                        <td class="pontos"></td>
+                    </tr>
+                    <tr>
+                        <td> 8</td>
+                        <td class="nome"></td>
+                        <td class="pontos"></td>
+                    </tr>
+                    <tr>
+                        <td> 9</td>
+                        <td class="nome"></td>
+                        <td class="pontos"></td>
+                    </tr>
+                    <tr>
+                        <td> 10</td>
+                        <td class="nome"></td>
+                        <td class="pontos"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</main>
+
+
+</html>
+
+<script>
+    var id = sessionStorage.ID_USUARIO;
+
+    function rankPonto(){
+
+        fetch("/rank/ranking",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer : id
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                resposta.json().then(function (resposta){
+                    console.log(resposta);
+                    console.log(JSON.stringify(resposta));
+                });
+
+            } else{
+                
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+    }
+    
+</script>

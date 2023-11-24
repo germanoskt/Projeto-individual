@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: rgb(66, 2, 2);
+    background: radial-gradient(circle, rgba(117, 0, 0, 0) 20%, rgb(7, 0, 1) 97%);
+    color: white;
+    /* background: url('https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2021/3/12/f7z7etqxmfgnkhziemfl/skate-memorial-vale-do-anhangabau')no-repeat scroll;
+    background-size: 100%;
+    position: relative; */
+}
+.logo a{
+    color: white;
+    text-decoration: none;
+    font-size: 45px;
+}
+.header {
+    background-color: #000000;
+    width: 100%;
+    height: 100px;
+}
+.header .container {
+    width: 80%;
+    height: 100%;
+    margin: 0 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header .container li{
+    display: inline;
+    list-style: none;
+    padding: 0 15px;
+}
+.header .container .navbare li a{
+    text-decoration: none;
+    color: white;
+}
+.lista-esquerda:hover{
+    color: rgba(240, 248, 255, 0.466);
+    font-size: 17.5px;
+    transition: 1.5s;
+}
+
+.navbard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main{
+    height: 100%;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.ensinar1{
+    width: 100%;
+    height: 400%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    /* border: 1px solid white; */
+}
+.ensinar2{
+    width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.ensinar3{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    /* margin: 100px 0 0 0; */
+}
+.ensinar4{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.primera-frase{
+    width: fit-content;
+    height: fit-content;
+    /* border: 1px solid white; */
+    border-radius: 10px;
+    margin: 100px 0 150px 200px;
+    font-size: 20px;
+    justify-content: center;
+}
+.segunda-frase{
+    width: 1200px;
+    height: fit-content;
+    /* border: 1px solid white; */
+    border-radius: 5px;
+    padding: 35px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    margin: 50px 0 0 0;
+}
+/* .segunda-frase:hover{
+    border: 0.5px solid black;
+    transition: 10ms;
+} */
+.segunda-frase h1{
+    display: flex;
+    justify-content: center;
+}
+.segunda-frase h2{
+    font-size: 30px;
+}
+.h2-title{
+    width: fit-content;
+    height: fit-content;
+    background-color: #000000;
+    padding: 1px 10px;
+    color: aliceblue;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+video{
+    width: 100%;
+    height: 300px;
+    margin: 50px 0 160px 0;
+    border-radius: 5px;
+}
+.imagem{
+    width: 500px;
+    height: 500px;
+    margin: 20px 0 100px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.252);
+}
+h1{
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+}
+.imagem-rg{
+    width: 500px;
+    height: 500px;
+    margin-left: 10px;
+    /* margin-bottom: 140px; */
+    margin-top: 60px;
+    border-radius: 5px;
+}
+#manobra{
+    font-size: 22.5px;
+}
+#inicial{
+    font-size: 30px;
+}
+.footer{
+    width: 100%;
+    position: relative;
+    height: 290px;
+    background: rgb(4,3,3);
+    background: linear-gradient(196deg, rgba(4, 3, 3, 0.075) 0%, rgba(8, 8, 8, 0.218) 90%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 70px 0 0 0;
+    margin: 100px 0 0 0;
+}
+.conteudo{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    text-decoration: none;
+}
+.conteudo p{
+    margin: 0 0 50px 0;
+}
+.conteudo h1,h2{
+    margin: 20px 0 10px 0;
+}
+.conteudo h1{
+    font-size: 45px;
+    font-weight: 700;
+}
+h3{
+    font-weight: bolder;
+}

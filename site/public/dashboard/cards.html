@@ -14,15 +14,15 @@
     <script src="../js/sessao.js"></script>
 </head>
 
-<body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
+<body onload="validarSessao(), pegarPontos()">
     <div class="header">
         <div class="container">
             <div class="back">
-                <div class="voltar"><a href="../index.html">Voltar</a></div>
+                <div class="voltar"><a href="../Tela-inicial.html">Voltar</a></div>
             </div>
             <div class="navbare">
                 <ul>
-                    <li class="lista-esquerda"><a href="../Tela-dashboard.html">Métricas</a></li>
+                    <li class="lista-esquerda"><a href="../Ranking.html">Ranking</a></li>
                 </ul>
             </div>
         </div>
@@ -31,15 +31,44 @@
 <div class="conteudo">
     <h1>Olá, <span id="b_usuario"></span>!</h1>
     <p> Bem vindo de volta!<br>Logo abaixo está o seu score de manobras nos picos mais conhecidos de São Paulo. </p>
-    <h2><b>Sua pontuação:</b></h2>
+    <h2><b>Sua pontuação:</b> <span id="botaoenviar">pontos</span></h1></h2>
 </div>
 <video autoplay loop muted src="../assets/video (2).mp4"></video>
 
 </html>
 
 
-<!--         
-<div class="hello">
-    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-</div>
-<body > -->
+<script>
+    var id = sessionStorage.ID_USUARIO;
+    
+    function pegarPontos(){
+
+        fetch("/pico/pegaPico", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer : id
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                resposta.json().then(function (resposta){
+                    var pontos = resposta.pontos
+                    botaoenviar.innerHTML = pontos;
+                    console.log(resposta);
+                    console.log(JSON.stringify(resposta));
+                });
+
+            } else{
+                
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+    }
+    
+</script>
