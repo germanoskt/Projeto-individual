@@ -1,6 +1,6 @@
 var database = require("../database/config")
-function cadastrar(pontos, id, nome) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", pontos, id, nome);
+function cadastrar(pontos, id) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", pontos, id);
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
@@ -10,23 +10,16 @@ function cadastrar(pontos, id, nome) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-function pegaPico(id){
-    var instrucao = `SELECT sum(pontos) as pontos FROM pontuacao WHERE fkUsuario = ${id};`
-    return database.executar(instrucao);
-
-}
-function ranking(id, pontos, nome){
-    var instrucao = `SELECT usuario.nome, SUM(pontuacao.${pontos}) as total_pontos
+function ranking(){
+    var instrucao = `SELECT usuario.nome AS nome, usuario.marca AS MARCA_USER, SUM(pontuacao.pontos) AS total_pontos
     FROM usuario
-    JOIN pontuacao ON usuario.${id} = pontuacao.fkUsuario
-    GROUP BY usuario.${nome}
+    JOIN pontuacao ON usuario.id = pontuacao.fkUsuario
+    GROUP BY usuario.nome, usuario.marca
     ORDER BY total_pontos DESC;`
     return database.executar(instrucao);
-
 }
 
 module.exports = {
     cadastrar,
-    pegaPico,
     ranking
 }

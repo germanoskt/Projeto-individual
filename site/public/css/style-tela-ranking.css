@@ -76,8 +76,8 @@ main{
     align-items: center;
 }
 .table{
-    width: 42vw;
-    height: 70vh;
+    width: 32vw;
+    height: 75vh;
     background-color: rgb(255, 255, 255);
 
     backdrop-filter: blur(0px);
@@ -177,5 +177,40 @@ thead th span{
 }
 h1{
     color: white;
-
+}
+#primeiroLugar{
+    color: gold;
+    /* background-color: #000000; */
+    padding: 6px 10px;
+    border-radius: 40px;
+    border: 2px solid gold;
+}
+.primeiroLugar{
+    font-size: 22px;
+    color: rgb(170, 146, 5);
+}
+#segundoLugar{
+    color: rgb(135, 135, 135);
+    /* background-color: #000000; */
+    padding: 6px 10px;
+    border-radius: 40px;
+    border: 2px solid rgb(135, 135, 135);
+}
+.segundoLugar{
+    font-size: 21px;
+    color: rgb(135, 135, 135);
+}
+#terceiroLugar{
+    color: rgb(90, 55, 23);
+    /* background-color: #000000; */
+    padding: 6px 10px;
+    border-radius: 40px;
+    border: 2px solid rgb(90, 55, 23);
+}
+.terceiroLugar{
+    font-size: 20px;
+    color: rgb(90, 55, 23);
+}
+.num{
+    margin-left: 10px;
 }

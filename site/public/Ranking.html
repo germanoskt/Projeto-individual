@@ -36,58 +36,71 @@
                         <th> Posição <span class="icon-arrow"></span></th>
                         <th> Usuário <span class="icon-arrow"></span></th>
                         <th> Pontuação <span class="icon-arrow"></span></th>
+                        <th> Marca Favorita <span class="icon-arrow"></span></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td> 1 </td>
-                        <td id="b_usuario"></td>
-                        <td class="pontos"></td>
+                        <div class="primeiroLugarNum">
+                            <td> <span id="primeiroLugar"> 1 </span></td>
+                        </div>
+                        <td class="nome"><span id="jo1" class="primeiroLugar"></span></td>
+                        <td class="pontos"><span id="p1" class="primeiroLugar"></span></td>
+                        <td class="pontos"><span id="id_marca1" class="primeiroLugar"></span></td>
                     </tr>
                     <tr>
-                        <td> 2 </td>
-                        <td id="b_usuario"></td>
-                        <td class="pontos"></td>
+                        <td> <span id="segundoLugar">2</span></td>
+                        <td class="nome"><span id="jo2" class="segundoLugar"></span></td>
+                        <td class="pontos"><span id="p2" class="segundoLugar"></span></td>
+                        <td class="pontos"><span id="id_marca2" class="segundoLugar"></span></td>
                     </tr>
                     <tr>
-                        <td> 3</td>
-                        <td class="nome"></td>
-                        <td class="pontos"></td>
+                        <td><span id="terceiroLugar">3</span></td>
+                        <td class="nome"><span id="jo3" class="terceiroLugar"></span></td>
+                        <td class="pontos"><span id="p3" class="terceiroLugar"></span></td>
+                        <td class="pontos"><span id="marca3" class="segundoLugar"></span></td>
                     </tr>
                     <tr>
-                        <td> 4</td>
-                        <td class="nome"></td>
-                        <td class="pontos"></td>
+                        <td><span class="num"> 4</span></td>
+                        <td class="nome"><span id="jo4"></span></td>
+                        <td class="pontos"><span id="p4"></span></td>
+                        <td class="pontos"><span id="marca4"></span></td>
                     </tr>
                     <tr>
-                        <td> 5</td>
-                        <td class="nome"></td>
-                        <td class="pontos"></td>
+                        <td><span class="num"> 5</span></td>
+                        <td class="nome"><span id="jo5"></span></td>
+                        <td class="pontos"><span id="p5"></span></td>
+                        <td class="pontos"><span id="marca5"></span></td>
                     </tr>
                     <tr>
-                        <td> 6</td>
-                        <td class="nome"></td>
-                        <td class="pontos"></td>
+                        <td><span class="num"> 6</span></td>
+                        <td class="nome"><span id="jo6"></span></td>
+                        <td class="pontos"><span id="p6"></span></td>
+                        <td class="pontos"><span id="marca6"></span></td>
                     </tr>
                     <tr>
-                        <td> 7</td>
-                        <td class="nome"></td>
-                        <td class="pontos"></td>
+                        <td><span class="num"> 7</span></td>
+                        <td class="nome"><span id="jo7"></span></td>
+                        <td class="pontos"><span id="p7"></span></td>
+                        <td class="pontos"><span id="marca7"></span></td>
                     </tr>
                     <tr>
-                        <td> 8</td>
-                        <td class="nome"></td>
-                        <td class="pontos"></td>
+                        <td><span class="num"> 8</span></td>
+                        <td class="nome"><span id="jo8"></span></td>
+                        <td class="pontos"><span id="p8"></span></td>
+                        <td class="pontos"><span id="marca8"></span></td>
                     </tr>
                     <tr>
-                        <td> 9</td>
-                        <td class="nome"></td>
-                        <td class="pontos"></td>
+                        <td><span class="num"> 9</span></td>
+                        <td class="nome"><span id="jo9"></span></td>
+                        <td class="pontos"><span id="p9"></span></td>
+                        <td class="pontos"><span id="marca9"></span></td>
                     </tr>
                     <tr>
-                        <td> 10</td>
-                        <td class="nome"></td>
-                        <td class="pontos"></td>
+                        <td><span class="num"> 10</span></td>
+                        <td class="nome"><span id="jo10"></span></td>
+                        <td class="pontos"><span id="p10"></span></td>
+                        <td class="pontos"><span id="marca10"></span></td>
                     </tr>
                 </tbody>
             </table>
@@ -99,7 +112,7 @@
 </html>
 
 <script>
-    var id = sessionStorage.ID_USUARIO;
+    window.onload = rankPonto()
 
     function rankPonto(){
 
@@ -109,16 +122,68 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                idServer : id
             })
-        }).then(function (resposta) {
+        }).then(function (resultado) {
             console.log("ESTOU NO THEN DO entrar()!")
 
-            if (resposta.ok) {
-                console.log(resposta);
-                resposta.json().then(function (resposta){
-                    console.log(resposta);
-                    console.log(JSON.stringify(resposta));
+            if (resultado.ok) {
+                console.log(resultado);
+                resultado.json().then(function (resultado){
+                    var j1 = resultado[0].nome
+                    var j2 = resultado[1].nome
+                    var j3 = resultado[2].nome
+                    var j4 = resultado[3].nome
+                    var j5 = resultado[4].nome
+                    var j6 = resultado[5].nome
+                    var j7 = resultado[6].nome
+                    var j8 = resultado[7].nome
+                    var j9 = resultado[8].nome
+                    var j10 = resultado[9].nome
+                    var ponto1 = resultado[0].total_pontos
+                    var ponto2 = resultado[1].total_pontos
+                    var ponto3 = resultado[2].total_pontos
+                    var ponto4 = resultado[3].total_pontos
+                    var ponto5 = resultado[4].total_pontos
+                    var ponto6 = resultado[5].total_pontos
+                    var ponto7 = resultado[6].total_pontos
+                    var ponto8 = resultado[7].total_pontos
+                    var ponto9 = resultado[8].total_pontos
+                    var ponto10 = resultado[9].total_pontos
+                    var marca1 = resultado[0].MARCA_USER
+                    var marca2 = resultado[1].MARCA_USER
+                    // console.log(j1)
+                    // console.log(j2)
+                    // console.log(pontos1)
+                    // console.log(pontos2)
+
+                    
+                    jo1.innerHTML = `${j1}`
+                    jo2.innerHTML = `${j2}`
+                    jo3.innerHTML = `${j3}`
+                    jo4.innerHTML = `${j4}`
+                    jo5.innerHTML = `${j5}`
+                    jo6.innerHTML = `${j6}`
+                    jo7.innerHTML = `${j7}`
+                    jo8.innerHTML = `${j8}`
+                    jo9.innerHTML = `${j9}`
+                    jo10.innerHTML = `${j10}`
+
+
+
+                    p1.innerHTML = `${ponto1}`
+                    p2.innerHTML = `${ponto2}`
+                    p3.innerHTML = `${ponto3}`
+                    p4.innerHTML = `${ponto4}`
+                    p5.innerHTML = `${ponto5}`
+                    p6.innerHTML = `${ponto6}`
+                    p7.innerHTML = `${ponto7}`
+                    p8.innerHTML = `${ponto8}`
+                    p9.innerHTML = `${ponto9}`
+                    p10.innerHTML = `${ponto10}`
+                    id_marca1.innerHTML = `${marca1}` 
+                    id_marca2.innerHTML = `${marca2}`
+                    console.log(resultado);
+                    console.log(JSON.stringify(resultado));
                 });
 
             } else{

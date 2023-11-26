@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+    <!-- <script src="./js/sessao.js"></script> -->
 </head>
 
 <body>
@@ -218,10 +219,10 @@
                 // glare: true,
             });
         </script>
-        <div class="button-enviar">
+        <div class="button-enviar" >
             <button onclick="botaoen()" id="botaoenviar">Enviar seus pontos</button>
         </div>
-<!-- <div id="armazenar"></div> -->
+<div id="armazenardiv" class="armazenar-div" style="display: none;"></div>
 </main>
 
 <footer>
@@ -258,21 +259,21 @@ var armazenar = 0;
 var id = sessionStorage.ID_USUARIO;
 
 function botaoen(){
-
+    armazenar = 0;
     armazenar.innerHTML = ""
-
-        var pontos = document.getElementsByName("pontuacao");
-        
-        for(var i = 0; i < pontos.length; i++){
-            var itemAtual = pontos[i];
-            if(itemAtual.checked){
-                console.log(`Seus pontos são: ${itemAtual.value}`);
-                armazenar += Number(itemAtual.value);
-                lista.push(itemAtual.value);
-                // armazenar.innerHTML = `${armazenar}<br>`
+    
+    var pontos = document.getElementsByName("pontuacao");
+    
+    for(var i = 0; i < pontos.length; i++){
+        var itemAtual = pontos[i];
+        if(itemAtual.checked){
+            armazenar += Number(itemAtual.value);
+            lista.push(itemAtual.value);
+            // armazenar.innerHTML = `${armazenar}<br>`
             }
         }
         console.log(lista)
+        console.log(`Seus pontos são: ${armazenar}`);
 
         botaoPerfil();
     }
@@ -310,6 +311,13 @@ function botaoPerfil(){
         }).catch(function (erro) {
             console.log(erro);
         })
+        armazenardiv.style.display = 'flex'
+        armazenardiv.innerHTML = `Seus pontos foram adicionados na sua tela de Perfil!`
+        
+    }
+    function sumirMensagem() {
+        armazenardiv.style.display = "none";
+        setInterval(sumirMensagem, 1000);
     }
 
 </script>
