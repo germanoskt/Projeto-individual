@@ -10,25 +10,47 @@ CREATE DATABASE ollie;
 
 USE ollie;
 
-CREATE TABLE usuario (
+
+CREATE TABLE usuario(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
-	senha VARCHAR(50)
+	senha VARCHAR(50),
+    marca VARCHAR(50)
 );
 CREATE TABLE pontuacao(
-idPontuacao INT auto_increment,
-pontos INT,
+idPontuacao INT PRIMARY KEY auto_increment,
+pontos VARCHAR(100),
 fkUsuario INT,
 CONSTRAINT fkU FOREIGN KEY (fkUsuario)
-	REFERENCES usuario(id),
-PRIMARY KEY (idPontuacao, fkUsuario)
+	REFERENCES usuario(id)
 );
-
-INSERT INTO pontuacao VALUES
-(NULL, NULL, 1);
+CREATE TABLE marcaFav(
+idMarca INT primary key auto_increment,
+fkUsuario int,
+CONSTRAINT fkUs FOREIGN KEY (fkUsuario)
+	REFERENCES usuario(id)
+);
 
 SELECT * FROM pontuacao;
 
-
 SELECT * FROM usuario;
+
+SELECT * FROM marcaFav;
+
+SELECT pontos FROM usuario JOIN pontuacao ON fkUsuario = id;
+
+
+SELECT pontos, usuario.nome FROM pontuacao JOIN usuario ON fkUsuario = id;
+
+SELECT COUNT(id) FROM usuario;
+
+SELECT usuario.nome AS nome, usuario.marca AS MARCA_USER, SUM(pontuacao.pontos) AS total_pontos
+FROM usuario
+JOIN pontuacao ON usuario.id = pontuacao.fkUsuario
+GROUP BY usuario.nome, usuario.marca
+ORDER BY total_pontos DESC;
+
+
+
+
